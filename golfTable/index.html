@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- Fortæller det er html5 -->
+<!-- html starter og slutter hele dokumentet / lang=da: Fortæller siden er på dansk -->
+<html lang="da">
+
+<!-- I <head> har man opsætning - alt det som man ikke ser som selve indholdet -->
+<head>
+
+    <!-- Sætter tegnsætning til utf-8 som bl.a. tillader danske bogstaver -->
+    <meta charset="utf-8">
+
+    <!-- Titel som ses oppe i browserens tab mv. -->
+    <title>Sigende Titel</title>
+
+    <!-- Metatags der fortæller at søgemaskiner er velkomne, hvem der udgiver siden og copyright information -->
+    <meta name="robots" content="All">
+    <meta name="author" content="Udgiver">
+    <meta name="copyright" content="Information om copyright">
+
+    <!-- Sikrer man kan benytte CSS ved at tilkoble en CSS fil -->
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Sikrer den vises korrekt på mobil, tablet mv. ved at tage ift. skærmstørrelse -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<!-- i <body> har man alt indhold på siden -->
+<body>
+
+<form class="container">
+    <label for="num1">1. Hul</label>
+    <input id="num1" value="0" onfocus="this.value=''">
+    <label for="num2" >2. Hul</label>
+    <input id="num2" value="0" onfocus="this.value=''">
+    <label for="num3">3. Hul</label>
+    <input id="num3" value="0" onfocus="this.value=''">
+    <label for="num4">4. Hul</label>
+    <input id="num4" value="0" onfocus="this.value=''">
+    <label for="num5">5. Hul</label>
+    <input id="num5" value="0" onfocus="this.value=''">
+    <label for="num6">6. Hul</label>
+    <input id="num6" value="0" onfocus="this.value=''">
+    <label for="num7">7. Hul</label>
+    <input id="num7" value="0" onfocus="this.value=''">
+    <label for="num8">8. Hul</label>
+    <input id="num8" value="0" onfocus="this.value=''">
+    <label for="num9">9. Hul</label>
+    <input id="num9" value="0" onfocus="this.value=''">
+
+</form>
+<div class="ialt">
+    <label for="ialt" class="total-amount">Total</label>
+    <input type="number" id="ialt">
+
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $("input").keyup(function () {
+            updatetotal()
+        });
+        var updatetotal = function () {
+            var num1 = parseInt($("#num1").val());
+            var num2 = parseInt($("#num2").val());
+            var num3 = parseInt($("#num3").val());
+            var num4 = parseInt($("#num4").val());
+            var num5 = parseInt($("#num5").val());
+            var num6 = parseInt($("#num6").val());
+            var num7 = parseInt($("#num7").val());
+            var num8 = parseInt($("#num8").val());
+            var num9 = parseInt($("#num9").val());
+
+            $("#ialt").val(num1 + num2 + num3 + num4 + num5 + num6 + num7 + num8 + num9)
+        };
+    });
+</script>
+</body>
+</html>
